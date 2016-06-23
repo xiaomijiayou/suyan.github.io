@@ -23,7 +23,7 @@ github: xiaomijiayou
 
 # avatar头像及Favicon
 avatar: http://xiaomijiayou.github.io/assets/img/touxiang.jpg
-favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+favicon: http://xiaomijiayou.github.io/assets/img/touxiang.jpg
 
 # disqus 设置
 disqus:
