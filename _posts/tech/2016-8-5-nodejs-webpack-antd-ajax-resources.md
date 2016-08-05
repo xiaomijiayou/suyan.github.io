@@ -38,9 +38,9 @@ description: 根据自己数据可视化的开发环境， 记录关于nodejs �
 
     - [webpack](https://github.com/webpack/webpack)
     - [webpack安装事例](https://www.codementor.io/reactjs/tutorial/beginner-guide-setup-reactjs-environment-npm-babel-6-webpack)
-    其中包含了webpac的hello world， react安装， babel安装配置；
-       Babel 是一个 JavaScript 编译器，Babel 用于转化你的 JavaScript 代码， 可以使用最新的js语法。
-       Loader： - [webpack的loader介绍](http://zhaoda.net/webpack-handbook/loader.html)
+        其中包含了webpac的hello world， react安装， babel安装配置；
+        Babel 是一个 JavaScript 编译器，Babel 用于转化你的 JavaScript 代码， 可以使用最新的js语法。
+        Loader： - [webpack的loader介绍](http://zhaoda.net/webpack-handbook/loader.html)
           Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换， 后面需要的less， css， json图片等都需要相应的loader进行转换.
   
 
