@@ -64,7 +64,61 @@ description: 根据自己数据可视化的开发环境， 记录关于nodejs �
         （2）：error: cannot resolve module 'style' in ....   =》 因为webpack缺少style-loader
           - [style-loader官网](https://github.com/webpack/style-loader )
  
+### koa安装（搭建简单的服务器， 根据请求解析json文件， 并返回给客户端）
 
+    - [koa 官网](http://koajs.com/)
+    
+    npm install koa
+    1：服务器端
+    vim readJson.js
+    
+        var fs = require('fs')
+        var app = require('koa')()
+        var cors = require('koa-cors')    //跨域
+        var bodyParser = require('koa-bodyparser');
+        var readFile = function(dir) {
+          return function(fn) {
+            fs.readFile(dir, fn)
+          }
+        }
+        app.use(cors());
+        app.use(bodyParser());
+        app.use(function* () {
+        
+        var  jsonOb = this.request.query;
+          var arr = yield [jsonOb.jsonPath].map(function(path) {
+          	console.log("path", path);
+            return readFile(path)
+          });
+          this.body = arr.join(',');
+        })
+        app.listen(8888)
+    访问 http://localhost:8888 
+    
+    2：客户端ajax发送json文件解析请求
+    
+      $.ajax({
+       url:"http://localhost:8888/list?jsonPath="+jsonPath,
+       type: "GET",
+       dataType: "json",
+       error: function(XMLHttpRequest, textStatus, errorThrown){
+          var s1=XMLHttpRequest;
+          var s2=textStatus;
+          var s3=errorThrown;
+          alert("error message : "+errorThrown.toString())
+          },
+       success: function(data){
+          console.log("data", data);
+          this.setState({data:data,loading:false, dateList: dateList, date: dateList[0], dataTime: this.getTimeData(data, dateList[0])} );
+
+          }.bind(this) 
+      }); 
+    
+    
+
+
+
+    
 
 
 
